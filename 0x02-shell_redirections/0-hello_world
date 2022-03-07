@@ -1,2 +1,2 @@
 #!/bin/bash
-print "Hello, World"
+printf "%b\n" "Hello, World"
