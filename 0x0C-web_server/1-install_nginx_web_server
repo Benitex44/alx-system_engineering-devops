@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Installs Nginx
-apt-get update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 mkdir -p /var/www/html
 chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
@@ -22,7 +22,7 @@ SERVER_CONFIG=\
 }"
 bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enable/default"
 
-if [ "$(pgrep -c nginx)" -le 0 ]: then
+if [ "$(pgrep -c nginx)" -le 0 ]; then
 		service nginx start
 else
 		service nginx restart
